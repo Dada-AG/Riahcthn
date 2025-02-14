@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voting</title>
     <link rel="icon" href="Picture/emb.png" type="image/x-icon">
-    <link rel="stylesheet" href="voting.css">
 </head>
     <styles>body {
     font-family: Arial, sans-serif;
@@ -184,6 +183,16 @@ h1 {
         </div>
     </div>
 
-    <script src="voting.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    // Confirm Vote Functionality (when confirm button is clicked)
+    document.querySelectorAll(".vote-btn").forEach(button => {
+        button.addEventListener("click", function () {
+            const candidateName = this.closest('.participant').querySelector('h3').innerText;
+            alert(`You have voted for ${candidateName}! Your vote has been recorded.`);
+        });
+    });
+});
+    </script>
 </body>
 </html>
